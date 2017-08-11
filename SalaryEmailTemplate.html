@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<style>
+  th{
+    background-color: #01ADDD;
+    color: #FFF;
+  }
+  h2{
+    color: deeppink;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 5px;
+}
+</style>
+
+
+</head>
+
+<body leng="en-US"   border="0" width="100%">
+	<div>
+        
+         <div>
+            
+                Hi,<br/>
+                <br/>
+                This is automated mail from ACCELLO RPA Agent.<br/> 
+             Data that are fetched from the scaned copies are attached to this mail as a excel file. Please find the attachemnt.
+             <br/>
+             <br/>
+             Salary data after all the transaction, dispaly in the below table.
+            
+            </div>
+        
+		<div  align="center">
+		<div >
+            
+           
+            
+            <p><br><H3>Salary data summary for ($Date)</H3>
+            
+			<table  align="center"  border="1" width=96% >
+			
+					
+					<tr >
+					<th class="text-center">S No</th>
+					<th class="text-center">Account Number</th>
+					<th class="text-center">Beneficiary Name</th>
+					<th class="text-center">IFSC Code</th>
+                    <th class="text-center">Availabale amount</th>
+                   
+                   
+                    
+				</tr>
+				
+				#set($x=0)
+				#foreach($x in $allResults)	
+				
+				<tr>
+					<td>$x.S_No.getAsString()</td>
+					<td>$x.Beneficiary_Acc_No.getAsString()</td>
+					<td>$x.Beneficiary_Name.getAsString()</td>
+					<td>$x.IFSC_Code.getAsString()</td>
+					<td>$x.Available_Amount.getAsString()</td>
+					   	
+				</tr>
+			
+				#end
+
+			</table>
+		</div>
+
+	<hr>
+			<H5><br>This is an auto-genarated email by VirtusaPolaris <B>ACCELLO </B>RPA Agent.<br>Please note that some times this report may not complete or incorrect due to RPA is still in Pilot Run</H5>
+
+		</div>
+	</div>
+</body>
+</html>
